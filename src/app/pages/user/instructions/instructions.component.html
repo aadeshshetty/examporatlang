@@ -1,0 +1,33 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card style="margin-top: 20px;">
+                    <mat-card-header>
+                    </mat-card-header>
+                    <mat-card-content style="margin-left: 20px;">
+                        <h2>Read the following Instructions of quiz carefully.</h2>
+                        <h2>{{title}}</h2>
+                        <p>{{description}}</p>
+                        <mat-divider></mat-divider>
+                        <br />
+                        <h2>Instructions</h2>
+                        <ul>
+                            <li>Read the Questions carefully</li>
+                            <li>Every Question has multiple options</li>
+                            <li>Choose the answer within the time limit</li>
+                            <li>Submit the quiz within <b>{{numberOfQuestions*2}} minutes</b>.</li>
+                            <li>Unlimited Attempts for this quiz</li>
+                            <li>There are <b>{{numberOfQuestions}}</b> questions in the quiz</li>
+                            <li>Max marks that can be obtained for this quiz is <b>{{maxMarks}}</b></li>
+                        </ul>
+                    </mat-card-content>
+                    <mat-card-content style="margin-left: 20px;">Click on <b>Start test</b> to continue</mat-card-content>
+                    <mat-card-actions class="text-center">
+                        <button (click)="startQuiz()" mat-raised-button color="primary">Start Quiz</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

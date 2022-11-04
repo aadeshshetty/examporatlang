@@ -1,0 +1,30 @@
+<mat-card style="margin-top: 10px;" *ngFor="let q of quizzes">
+    <mat-card-header>
+        <mat-card-title><mat-icon *ngIf="q.active" style="font-size:15px;color:rgb(9, 228, 9);">
+            circle</mat-icon>
+        <mat-icon *ngIf="!q.active" style="font-size:15px;color:rgb(184, 0, 0);">circle</mat-icon>{{q.title}}</mat-card-title>
+        <mat-card-subtitle>{{q.category.title}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="overflow-ellipsis">{{q.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button [routerLink]="'/admin/view-questions/'+q.qid+'/'+q.title" mat-raised-button color="primary" style="margin-right: 5px;">View Quiz</button>
+        <button mat-stroked-button style="color:black;margin-right: 5px;" disabled="true" color="primary">MaxMarks
+            {{q.maxMarks}}</button>
+        <button mat-stroked-button style="color:black;margin-right: 5px;" disabled="true" color="primary">questions
+            {{q.numberOfQuestions}}</button>
+
+        <button mat-flat-button [routerLink]="'/admin/update-quiz/'+q.qid">
+            <mat-icon>edit</mat-icon>
+        </button>
+
+        <button mat-flat-button (click)="deleteQuiz(q.qid)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>
+<div class="container text-center" style="margin-top: 20px;">
+    <button mat-raised-button color="primary" routerLink="/admin/add-quiz">Add new quiz</button>
+</div>

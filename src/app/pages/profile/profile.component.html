@@ -1,0 +1,49 @@
+<mat-card>
+    <h1>Profile Details</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img src="https://imgs.search.brave.com/O14tIEfDxqO850yPDONleawFoWP1RGhJsbCdxckrtwI/rs:fit:820:681:1/g:ce/aHR0cHM6Ly93d3cu/c2Vla3BuZy5jb20v/cG5nL2RldGFpbC85/NjYtOTY2NTQ5M19t/eS1wcm9maWxlLWlj/b24tYmxhbmstcHJv/ZmlsZS1pbWFnZS1j/aXJjbGUucG5n"
+                    alt="profile"
+                    class="profile-image"
+                    />
+                    <h1 class="text-center">{{user.firstname}} {{user.lastname}}</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <table class="table text-center">
+                            <tr>
+                                <td>Username</td>
+                                <td>{{user.username}}</td>
+                            </tr>
+                            <tr>
+                                <td>User Id</td>
+                                <td>{{user.id}}</td>
+                            </tr>
+                            <tr>
+                                <td>Phone</td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>{{user.email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>{{user.enabled?"Active":"Not Active"}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary">Update</button>
+    </mat-card-actions>
+</mat-card>
